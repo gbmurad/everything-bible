@@ -1,0 +1,148 @@
+/* Everything Bible site: the app's own look. Paper and serif, a color for each part of the Bible, drawn scenes, gentle motion. */
+:root {
+  --paper:#f6f1e7; --card:#fffdf8; --ink:#1d1a16; --muted:#6b645a; --line:rgba(0,0,0,.08);
+  --burgundy:#7a1f2b; --burgundy-deep:#4a0e1a; --gold:#f0bd52; --cream:#fff8ec;
+  --law:#8c3b2a; --history:#946410; --wisdom:#6b3fa0; --major:#1f5fa8; --minor:#17727a;
+  --gospels:#9b1e33; --acts:#2e7d4f; --paul:#3d4f96; --general:#5c7a2e; --revelation:#b4501a;
+  --serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --radius: 26px;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#15110d; --card:#211b16; --ink:#f3ece0; --muted:#a79f92; --line:rgba(255,255,255,.1); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.6 var(--sans); overflow-x:hidden; }
+a { color: var(--burgundy); }
+@media (prefers-color-scheme: dark) { a { color:#e9a0aa; } }
+img { max-width:100%; display:block; }
+h1, h2, h3 { font-family: var(--serif); line-height:1.15; margin:0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* Top bar */
+.top { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--paper) 78%, transparent); border-bottom: 1px solid var(--line); }
+.top .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; }
+.brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:700; font-size:18px; }
+.brand img { width:36px; height:36px; border-radius:9px; }
+.top nav a { text-decoration:none; color:var(--ink); font-weight:600; font-size:15px; margin-left:18px; opacity:.8; }
+.top nav a:hover, .top nav a[aria-current] { opacity:1; color:var(--burgundy); }
+
+/* Drawn scenes: a sky, a glowing sun or moon, rolling hills, drifting clouds */
+.scene { position:relative; overflow:hidden; color:#fff; isolation:isolate; }
+.scene::before { content:""; position:absolute; inset:0; z-index:-2; background: var(--sky); }
+.scene .sun { position:absolute; z-index:-1; width:180px; height:180px; border-radius:50%; right:12%; top:18%;
+  background: radial-gradient(circle, rgba(255,228,160,.95) 0 38%, rgba(255,210,120,.35) 39% 60%, transparent 61%);
+  animation: glow 6s ease-in-out infinite; }
+.scene .hills { position:absolute; left:0; right:0; bottom:-1px; z-index:-1; width:100%; height:42%; }
+.scene .cloud { position:absolute; z-index:-1; height:26px; border-radius:20px; background:rgba(255,255,255,.18);
+  animation: drift 38s linear infinite; }
+.scene .cloud::before, .scene .cloud::after { content:""; position:absolute; border-radius:50%; background:inherit; }
+.scene .cloud::before { width:46px; height:46px; left:18px; top:-22px; }
+.scene .cloud::after { width:34px; height:34px; left:52px; top:-14px; }
+@keyframes glow { 50% { transform: scale(1.06); opacity:.9; } }
+@keyframes drift { from { transform: translateX(-30vw); } to { transform: translateX(120vw); } }
+
+/* Hero */
+.hero { --sky: linear-gradient(170deg, #a03446 0%, #6a1827 45%, #2a0a12 100%); padding: 70px 0 0; }
+.hero .wrap { display:grid; grid-template-columns: 1.05fr .95fr; gap: 30px; align-items:end; }
+.hero .copy { padding-bottom: 90px; }
+.hero .icon { width:92px; height:92px; border-radius:21px; box-shadow:0 14px 34px rgba(0,0,0,.35); margin-bottom:22px; }
+.hero h1 { font-size: clamp(40px, 6vw, 68px); letter-spacing:-.5px; }
+.hero h1 em { font-style:normal; color: var(--gold); }
+.hero p.lead { font-size: 20px; max-width: 30em; opacity:.92; margin: 16px 0 26px; }
+.pills { display:flex; flex-wrap:wrap; gap:10px; }
+.pill { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; font-weight:700; font-size:15px;
+  background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.22); text-decoration:none; }
+.pill.gold { background: var(--gold); color:#3a1a06; border-color: transparent; }
+.phones { position:relative; height: 560px; }
+.phone { position:absolute; width: 250px; border-radius: 42px; padding: 9px; background:#111;
+  box-shadow: 0 30px 60px rgba(0,0,0,.45), inset 0 0 0 2px #2a2a2a; }
+.phone img { border-radius: 34px; }
+.phone::before { content:""; position:absolute; top:19px; left:50%; width:74px; height:22px; margin-left:-37px; background:#111; border-radius:12px; z-index:1; }
+.phones .one { left: 4%; bottom: -60px; transform: rotate(-6deg); animation: float 7s ease-in-out infinite; }
+.phones .two { right: 2%; bottom: -20px; transform: rotate(5deg); animation: float 7s ease-in-out -3.5s infinite; }
+@keyframes float { 50% { translate: 0 -12px; } }
+
+/* Sections */
+section.band { padding: 84px 0; }
+.kicker { font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:13px; color: var(--burgundy); }
+@media (prefers-color-scheme: dark) { .kicker { color: var(--gold); } }
+h2.title { font-size: clamp(30px, 4vw, 44px); margin: 8px 0 14px; }
+p.sub { color: var(--muted); font-size: 19px; max-width: 36em; margin: 0 0 36px; }
+
+/* Feature tiles, each in a part of the Bible's color, its symbol large and faint in the corner */
+.tiles { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tile { position:relative; overflow:hidden; border-radius: var(--radius); padding: 22px; min-height: 190px; color:#fff;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--c) 82%, white) 0%, var(--c) 55%, color-mix(in srgb, var(--c) 80%, black) 100%);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--c) 30%, transparent); transition: transform .25s ease; }
+.tile:hover { transform: translateY(-4px) rotate(-.4deg); }
+.tile .badge { width:46px; height:46px; border-radius:50%; background:#fff; color:var(--c); display:grid; place-items:center; margin-bottom: 26px; }
+.tile .badge svg { width:24px; height:24px; }
+.tile .art { position:absolute; right:-8px; top:-8px; width:120px; height:120px; opacity:.16; color:#fff; }
+.tile h3 { font-size: 22px; margin-bottom: 6px; }
+.tile p { margin:0; opacity:.9; font-size:15.5px; line-height:1.5; }
+
+/* Screens: a row of phones that scrolls sideways on small screens */
+.screens { display:flex; gap: 22px; overflow-x:auto; padding: 10px 4px 30px; scroll-snap-type:x mandatory; }
+.screens figure { margin:0; flex: 0 0 220px; scroll-snap-align:center; }
+.screens .phone { position:relative; width:220px; border-radius:38px; padding:8px; }
+.screens .phone img { border-radius:31px; }
+.screens figcaption { text-align:center; font-family: var(--serif); font-weight:700; margin-top:14px; font-size:18px; }
+
+/* Languages and the free band */
+.chips { display:flex; flex-wrap:wrap; gap:10px; }
+.chip { padding: 9px 15px; border-radius:999px; background: var(--card); border:1px solid var(--line); font-weight:600; font-size:15px; }
+.chip::before { content:""; display:inline-block; width:9px; height:9px; border-radius:50%; background: var(--c, var(--burgundy)); margin-right:8px; }
+.free { --sky: linear-gradient(165deg, #f3c768, #d79a2b 55%, #a8661a); color:#3a1a06; border-radius: 34px; padding: 54px 40px; text-align:center; }
+.free h2 { font-size: clamp(30px, 4vw, 46px); }
+.free p { font-size:19px; max-width: 34em; margin: 14px auto 0; }
+
+/* Article pages (privacy, support) */
+.pagehead { padding: 56px 0 74px; }
+.pagehead h1 { font-size: clamp(36px, 5vw, 54px); }
+.pagehead p { opacity:.9; font-size:19px; margin: 12px 0 0; max-width: 34em; }
+.article { max-width: 760px; margin: -40px auto 0; padding: 0 20px 80px; position:relative; }
+.card { background: var(--card); border:1px solid var(--line); border-radius: 22px; padding: 22px 24px; margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.05); border-left: 6px solid var(--c, var(--burgundy)); }
+.card h2 { font-size: 22px; margin-bottom: 8px; color: var(--c, var(--burgundy)); }
+@media (prefers-color-scheme: dark) { .card h2 { color: color-mix(in srgb, var(--c, var(--burgundy)) 55%, white); } }
+.card p { margin: 0 0 10px; } .card p:last-child { margin-bottom:0; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+details { background: var(--card); border:1px solid var(--line); border-radius:18px; padding: 14px 20px; margin-bottom: 10px; }
+details summary { cursor:pointer; font-weight:700; font-family: var(--serif); font-size: 19px; list-style:none; display:flex; justify-content:space-between; gap: 12px; }
+details summary::-webkit-details-marker { display:none; }
+details summary::after { content:"+"; color: var(--burgundy); font-family: var(--sans); font-weight:800; transition: transform .2s; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin: 10px 0 2px; color: var(--ink); }
+
+footer { border-top:1px solid var(--line); padding: 30px 0 46px; color: var(--muted); font-size: 15px; }
+footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap: 14px; }
+footer a { margin-left: 18px; }
+
+/* Rise in as things come into view */
+.rise { opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.rise.in { opacity:1; transform:none; }
+
+@media (max-width: 860px) {
+  .scene .sun { width: 120px !important; height: 120px !important; top: 10px !important; right: -36px !important; opacity: .55; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero .copy { padding-bottom: 10px; }
+  .phones { height: 470px; }
+  .phones .one { left: 50%; margin-left: -230px; }
+  .phones .two { right: 50%; margin-right: -230px; }
+  .tiles { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: 1fr; }
+  .phones { height: 400px; }
+  .phone { width: 190px; border-radius: 34px; } .phone img { border-radius: 27px; }
+  .phones .one { margin-left: -185px; } .phones .two { margin-right: -185px; }
+  .top nav a { margin-left: 12px; font-size: 14px; }
+  .free { padding: 40px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .rise { opacity:1; transform:none; }
+}
