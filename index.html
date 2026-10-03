@@ -1,41 +1,133 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Everything Bible</title><meta name="description" content="Everything Bible: a free iPhone app to read the Bible and track what you have read, with notes, highlights, a daily devotional, trivia and Bibles in 14 languages."><link rel="icon" href="favicon.png">
-<style>
-  :root { --bg:#f6f1e7; --card:#fffdf8; --ink:#1d1a16; --muted:#6b645a; --accent:#7a1f2b; --line:rgba(0,0,0,.09); }
-  @media (prefers-color-scheme: dark) { :root { --bg:#17130f; --card:#211c17; --ink:#f3ece0; --muted:#a79f92; --accent:#e07a84; --line:rgba(255,255,255,.12); } }
-  * { box-sizing:border-box }
-  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system, "SF Pro Text", system-ui, sans-serif; }
-  main { max-width:680px; margin:0 auto; padding:28px 18px 70px; }
-  header.brand { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
-  header.brand img { width:56px; height:56px; border-radius:13px; }
-  header.brand a { color:var(--ink); text-decoration:none; font-weight:700; font-size:19px; }
-  h1 { font-size:30px; line-height:1.2; margin:22px 0 4px; }
-  h2 { font-size:19px; margin-top:30px; color:var(--accent); }
-  p.meta { color:var(--muted); margin-top:0; }
-  a { color:var(--accent); }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 20px 14px; margin-top:18px; }
-  ul { padding-left:20px } li { margin:6px 0 }
-  footer { margin-top:44px; color:var(--muted); font-size:15px; }
-  footer a { margin-right:16px }
-</style>
-</head><body><main>
-<header class="brand"><img src="icon.png" alt=""><a href="./">Everything Bible</a></header>
+<title>Everything Bible</title>
+<meta name="description" content="A free iPhone app to read the Bible and keep going: track your reading, write notes, a daily devotional, games, and Bibles in 14 languages. No ads, no tracking.">
+<meta name="theme-color" content="#7a1f2b">
+<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head><body>
 
-<h1>Read the Bible. Keep going.</h1>
-<p class="meta">A free iPhone app to read the Bible and keep track of what you have read. No accounts, no ads, no tracking, and nothing to buy.</p>
-<div class="card">
-<h2>What it does</h2>
-<ul>
-<li>Tick off chapters as you read, and watch every book fill in. There are no streaks to lose.</li>
-<li>Notes on any chapter or verse, and highlights in six colors.</li>
-<li>Type John 3, 1 cor 13 or ps23 to go straight to a chapter.</li>
-<li>A daily devotional, trivia, quizzes and fun facts.</li>
-<li>Bibles in 14 languages: three English ones inside the app and 13 more you download once and read offline. The app itself speaks 15 languages.</li>
-<li>A Verse of the Day widget in the colors you choose.</li>
-<li>Light and dark mode, large text, and VoiceOver.</li>
-</ul>
-</div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="icon.png" alt="">Everything Bible</a>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+</div></header>
 
-<footer><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></footer>
-</main></body></html>
+<section class="hero scene">
+  <span class="sun" aria-hidden="true"></span>
+  <span class="cloud" style="width:90px; top:16%; animation-duration:44s" aria-hidden="true"></span>
+  <span class="cloud" style="width:70px; top:30%; animation-duration:58s; animation-delay:-20s" aria-hidden="true"></span>
+  <svg class="hills" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="rgba(255,255,255,.07)" d="M0,190 C220,120 380,230 620,170 C860,110 1040,210 1440,140 L1440,320 L0,320 Z"/>
+    <path fill="rgba(0,0,0,.22)" d="M0,250 C260,200 470,280 760,235 C1030,192 1210,270 1440,225 L1440,320 L0,320 Z"/>
+  </svg>
+  <div class="wrap">
+    <div class="copy">
+      <img class="icon" src="icon.png" alt="Everything Bible app icon">
+      <h1>Read the Bible.<br><em>Keep going.</em></h1>
+      <p class="lead">A free iPhone app to read the Bible and keep track of it, with notes, a daily devotional, games and Bibles in 14 languages. No ads, no tracking, nothing to buy.</p>
+      <div class="pills">
+        <span class="pill gold">Free on iPhone</span>
+        <span class="pill">Coming soon to the App Store</span>
+      </div>
+    </div>
+    <div class="phones" aria-hidden="true">
+      <div class="phone one"><img src="img/01-progress.jpg" alt=""></div>
+      <div class="phone two"><img src="img/08-learn.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section class="band"><div class="wrap">
+  <div class="rise">
+    <div class="kicker">What it does</div>
+    <h2 class="title">Everything for reading, in one place</h2>
+    <p class="sub">Every part of the Bible has its own color, every page has a little life in it, and nothing is ever lost by missing a day.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile rise" style="--c:var(--gospels)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0Z"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0Z"/></svg></div>
+      <h3>Read and track</h3><p>Tick off chapters as you read and watch every book fill in. Celebrate each chapter and every book you finish.</p>
+    </div>
+    <div class="tile rise" style="--c:var(--wisdom)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3h10l4 4v14H5Zm9 1v4h4"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h10l4 4v14H5Zm3 8h8v1.6H8Zm0 4h8v1.6H8Z"/></svg></div>
+      <h3>Notes and highlights</h3><p>Write on any chapter or verse, highlight in six colors, and see every note on a colorful board.</p>
+    </div>
+    <div class="tile rise" style="--c:var(--history)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="10" r="5"/><path d="M3 20h18v2H3z"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M11 2h2v4h-2zm0 16h2v4h-2zM2 11h4v2H2zm16 0h4v2h-4z"/></svg></div>
+      <h3>A devotional each morning</h3><p>A short devotional built on a verse, plus a Verse of the Day and an encouraging word for every part of the day.</p>
+    </div>
+    <div class="tile rise" style="--c:var(--minor)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10v4a5 5 0 0 1-10 0Zm4 10h2v4h3v3H8v-3h3Z"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10v4a5 5 0 0 1-10 0Zm4 10h2v4h3v3H8v-3h3Z"/></svg></div>
+      <h3>Games and milestones</h3><p>Trivia, Finish the Verse, a quiz on the books, fun facts, a Daily Challenge, and gold medals for what you finish.</p>
+    </div>
+    <div class="tile rise" style="--c:var(--major)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
+      <h3>Your language</h3><p>Bibles in 14 languages to read offline, and an app that speaks 15. Every Bible is free and openly licensed.</p>
+    </div>
+    <div class="tile rise" style="--c:var(--acts)">
+      <svg class="art" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c4 4 7 7 7 11a7 7 0 0 1-14 0c0-4 3-7 7-11Z"/></svg>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></div>
+      <h3>Can we pray for you?</h3><p>Send a prayer request privately, with your name or without it. Only the team reads it, and we will pray for you.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+  <div class="rise">
+    <div class="kicker">A look inside</div>
+    <h2 class="title">Beautiful in light and dark</h2>
+    <p class="sub">Drawn scenes, warm paper, and the serif the Bible reads in. Swipe through a few screens.</p>
+  </div>
+  <div class="screens rise">
+    <figure><div class="phone"><img src="img/02-read.jpg" alt="The Read tab: Continue Reading on a night sky and the parts of the Bible in color" loading="lazy"></div><figcaption>Pick up where you left off</figcaption></figure>
+    <figure><div class="phone"><img src="img/07-devotional.jpg" alt="Today's devotional on a drawn sunrise" loading="lazy"></div><figcaption>A devotional each morning</figcaption></figure>
+    <figure><div class="phone"><img src="img/21-notes.jpg" alt="Notes in colored cards" loading="lazy"></div><figcaption>Notes for every verse</figcaption></figure>
+    <figure><div class="phone"><img src="img/12-achievements.jpg" alt="Achievements with gold medals" loading="lazy"></div><figcaption>Milestones worth celebrating</figcaption></figure>
+    <figure><div class="phone"><img src="img/09-trivia.jpg" alt="Trivia topics in color" loading="lazy"></div><figcaption>Trivia and quizzes</figcaption></figure>
+    <figure><div class="phone"><img src="img/20-dark-psalm23.jpg" alt="Psalm 23 in dark mode with highlights" loading="lazy"></div><figcaption>Easy on the eyes at night</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap rise">
+  <div class="kicker">Read in your language</div>
+  <h2 class="title">Fifteen languages and counting</h2>
+  <div class="chips" style="margin-top:22px">
+    <span class="chip" style="--c:var(--gospels)">English</span><span class="chip" style="--c:var(--history)">Español</span>
+    <span class="chip" style="--c:var(--acts)">Português</span><span class="chip" style="--c:var(--major)">Français</span>
+    <span class="chip" style="--c:var(--law)">Deutsch</span><span class="chip" style="--c:var(--wisdom)">Italiano</span>
+    <span class="chip" style="--c:var(--paul)">Русский</span><span class="chip" style="--c:var(--revelation)">中文</span>
+    <span class="chip" style="--c:var(--minor)">日本語</span><span class="chip" style="--c:var(--general)">한국어</span>
+    <span class="chip" style="--c:var(--gospels)">हिन्दी</span><span class="chip" style="--c:var(--history)">العربية</span>
+    <span class="chip" style="--c:var(--acts)">Bahasa Indonesia</span><span class="chip" style="--c:var(--major)">Tiếng Việt</span>
+    <span class="chip" style="--c:var(--wisdom)">Filipino</span>
+  </div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+  <div class="free scene rise">
+    <h2>Free, by the grace of God</h2>
+    <p>Everything Bible is free and always will be. No ads, no tracking, no accounts, and nothing to buy. Just the Word, and a little help to keep reading it.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 George Murad</span>
+  <span><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></span>
+</div></footer>
+
+<script>
+  // Cards rise in as they come into view. Without support, or with Reduce Motion, they simply show.
+  const items = document.querySelectorAll('.rise');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const seen = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    items.forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; seen.observe(el); });
+  } else { items.forEach(el => el.classList.add('in')); }
+</script>
+</body></html>
